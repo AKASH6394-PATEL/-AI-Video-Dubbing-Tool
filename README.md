@@ -47,3 +47,32 @@ py -3.9 -m venv venv
 
 # Activate the virtual environment
 venv\Scripts\activate
+
+Install Dependencies
+First, we install the large, complex libraries (tensorflow and protobuf) manually, and then the rest from requirements.txt.
+
+# (Venv is active)
+
+# 1. Install the specific TensorFlow 2.9.3 wheel (for Python 3.9)
+# (This is the file we downloaded manually in our testing)
+pip install [https://files.pythonhosted.org/packages/a9/0c/93e7f4c933b5c9006e331f79f0101037305c1f03fce7e7807a8b348b6c8f/tensorflow-2.9.3-cp39-cp39-win_amd64.whl](https://files.pythonhosted.org/packages/a9/0c/93e7f4c933b5c9006e331f79f0101037305c1f03fce7e7807a8b348b6c8f/tensorflow-2.9.3-cp39-cp39-win_amd64.whl)
+
+# 2. Install the compatible protobuf version (for TensorFlow 2.9)
+pip install "protobuf<3.20,>=3.9.2"
+
+# 3. Install the compatible streamlit version (for old protobuf)
+pip install "streamlit==1.22.0"
+
+# 4. Now, install everything else from the requirements file
+pip install -r requirements.txt
+
+The app should now open in your browser at http://localhost:8501.
+
+
+3.  Page par upar-right mein **"Commit changes"** waala hara button daba dijiye.
+
+---
+
+Bas! Ab aapka yeh project bhi GitHub par hai aur aap iska link (`https://github.com/AKASH6394-PATEL/AI-Video-Dubbing-Tool`) apne resume mein daal sakte hain.
+
+Ab bataiye, naye project **(Task 3: Music Generation)** par chala jaaye?
